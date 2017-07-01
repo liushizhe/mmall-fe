@@ -2,7 +2,7 @@
 * @Author: Jason
 * @Date:   2017-06-29 16:36:50
 * @Last Modified by:   Jason
-* @Last Modified time: 2017-06-29 19:28:37
+* @Last Modified time: 2017-06-30 16:58:18
 */
 
 'use strict';
@@ -25,7 +25,7 @@ var nav = {
 		});
 		// 注册点击事件
 		$('.js-register').click(function() {
-			window.location.href = './register.html';
+			window.location.href = './user-register.html';
 		});
 		// 退出点击事件
         $('.js-logout').click(function(){
