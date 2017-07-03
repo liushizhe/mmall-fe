@@ -2,19 +2,35 @@
 * @Author: Jason
 * @Date:   2017-06-28 14:18:03
 * @Last Modified by:   Jason
-* @Last Modified time: 2017-06-29 21:40:25
+* @Last Modified time: 2017-07-02 12:27:23
 */
 
 'use strict';
-
+require('page/index/index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
+require('util/slider/index.js');
+
 var navSide = require('page/common/nav-side/index.js');
+var templateBanner = require('./banner.string');
 var _mm = require('util/mm.js');
 
-navSide.init({
-	name: 'user-pass-update'
+$(function() {
+    // 渲染banner的html
+    var bannerHtml  = _mm.renderHtml(templateBanner);
+    $('.banner-con').html(bannerHtml);
+    // 初始化banner
+    var $slider     = $('.banner').unslider({
+        dots: true  //显示底部小圆点，小圆点样式需要初始化
+    });
+    // 前一张和后一张操作的事件绑定
+    $('.banner-con .banner-arrow').click(function(){
+        var forward = $(this).hasClass('prev') ? 'prev' : 'next';
+        $slider.data('unslider')[forward]();
+    });
 });
+
+
 //http://happymmall.com/product/list.do?keyword=1
 // _mm.request({
 // 	url: '/product/list.do?keyword=1',

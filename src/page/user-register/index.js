@@ -2,7 +2,7 @@
 * @Author: Jason
 * @Date:   2017-06-30 15:39:55
 * @Last Modified by:   Jason
-* @Last Modified time: 2017-06-30 15:42:02
+* @Last Modified time: 2017-07-03 00:58:14
 */
 
 'use strict';
@@ -36,6 +36,8 @@ var page = {
                 return;
             }
             // 异步验证用户名是否存在
+            //可能出现问题
+        	//{"status":1,"msg":"用户名已存在"}
             _user.checkUsername(username, function(res){
                 formError.hide();
             }, function(errMsg){
